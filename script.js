@@ -22,7 +22,7 @@ window.addEventListener("devicemotion", (event) => {
   const w = 80;
   const h = 80;
 
-  // 화면 밖으로 나가면 반대쪽으로 루프
+  // 화면 밖으로 나가면 반대쪽에서 등장 (루프)
   if (posX < -w) posX = window.innerWidth;
   if (posX > window.innerWidth) posX = -w;
   if (posY < -h) posY = window.innerHeight;
