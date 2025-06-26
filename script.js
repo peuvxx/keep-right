@@ -1,3 +1,18 @@
+if (
+  typeof DeviceMotionEvent !== "undefined" &&
+  typeof DeviceMotionEvent.requestPermission === "function"
+) {
+  DeviceMotionEvent.requestPermission()
+    .then((response) => {
+      if (response === "granted") {
+        window.addEventListener("devicemotion", handleMotion);
+      }
+    })
+    .catch(console.error);
+} else {
+  window.addEventListener("devicemotion", handleMotion);
+}
+
 const graphic = document.getElementById("graphic");
 let posX = window.innerWidth / 2;
 let posY = window.innerHeight / 2;
